@@ -1,0 +1,799 @@
+@import "vars";
+@import "mixins";
+@import "grid";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  &__body {
+    background-color: $bacgroundColor;
+    font-family: "Roboto", sans-serif;
+  }
+
+  &__header {
+    padding-top: 25px;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__footer {
+    margin-bottom: 87px;
+  }
+
+  &__grid {
+    padding-bottom: 64px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 24px;
+
+  @include onDesktop {
+    padding: 0 120px;
+  }
+
+  @include onTV {
+    padding: 0 160px;
+  }
+}
+
+.content {
+  &__left {
+    margin-bottom: 50px;
+  }
+  &__right {
+    margin-bottom: 56px;
+  }
+
+  @include onDesktop {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+
+    &__left {
+      position: relative;
+      top: 65px;
+    }
+  }
+
+  @include onTV {
+    &__left {
+      top: 105px;
+    }
+  }
+}
+
+.left {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &__founder {
+    width: 45%;
+    height: 165px;
+    border-bottom: 1px $border solid;
+    border-top: 1px $border solid;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    @include onDesktop {
+      height: 330px;
+    }
+
+    @include onTV {
+      height: 512px;
+    }
+  }
+
+  &__boss {
+    width: 45%;
+    height: 165px;
+    border-bottom: 1px $border solid;
+    border-top: 1px $border solid;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    @include onDesktop {
+      height: 330px;
+    }
+
+    @include onTV {
+      height: 512px;
+    }
+  }
+
+  &__image {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+
+    @include onDesktop {
+      width: 208px;
+      height: 208px;
+    }
+
+    @include onTV {
+      width: 345px;
+      height: 345px;
+    }
+  }
+
+  &__name {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: $name;
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+  }
+
+  &__pos {
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $pos;
+
+    @include onDesktop {
+      font-size: 16px;
+    }
+
+    @include onTV {
+      position: relative;
+      top: -20px;
+    }
+  }
+}
+
+.right {
+  width: 100%;
+
+  &__el {
+    margin: 0 auto;
+    border: 1px solid $border;
+    border-radius: 0 0 10px 0;
+    display: flex;
+    width: 273px;
+    height: 56px;
+    margin-bottom: 16px;
+
+    &--title {
+      margin-bottom: 0;
+      border: none;
+    }
+
+    @include onDesktop {
+      margin: none;
+      height: 65px;
+      width: 100%;
+      margin-bottom: 25px;
+
+      &--title {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onTV {
+      height: 105px;
+    }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 56px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-right: 1px solid $border;
+
+    &--empty {
+      border: none;
+    }
+
+    @include onDesktop {
+      height: 65px;
+      width: 65px;
+    }
+
+    @include onTV {
+      width: 105px;
+      height: 105px;
+    }
+
+    &--adr {
+      background-image: url(../images/icon/adr.png);
+    }
+    &--tel {
+      background-image: url(../images/icon/phone.png);
+    }
+    &--email {
+      background-image: url(../images/icon/email.png);
+    }
+    &--clock {
+      background-image: url(../images/icon/clock.png);
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    padding-left: 17px;
+    height: 56px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    color: $name;
+
+    @include onDesktop {
+      height: 65px;
+      padding-left: 20px;
+    }
+
+    @include onTV {
+      padding-left: 30px;
+      height: 105px;
+      font-size: 16px;
+    }
+
+    &--weekend {
+      font-size: 11px;
+
+      @include onDesktop {
+        font-size: 13px;
+      }
+
+      @include onTV {
+        font-size: 16px;
+      }
+    }
+
+    &--title {
+      color: $title;
+      border: 1px solid $border;
+      border-bottom: none;
+      border-radius: 0 10px 0 0;
+      width: 200px;
+      position: relative;
+      left: -12px;
+
+      @include onDesktop {
+        height: 65px;
+        left: -6px;
+      }
+
+      @include onTV {
+        width: 275px;
+        height: 105px;
+        left: -14px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.footer {
+  &__content {
+    padding: 19px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+
+    @include onDesktop {
+      width: 352px;
+      position: relative;
+      left: 63%;
+    }
+  }
+
+  &__text {
+    color: $title;
+    font-size: 12px;
+    line-height: 16px;
+
+    @include onDesktop {
+      font-size: 14px;
+    }
+  }
+
+  &__icons {
+    height: 24px;
+  }
+
+  &__icon {
+    margin-right: 14px;
+    width: 24px;
+    height: 24px;
+
+    @include onDesktop {
+      margin-right: 20px;
+    }
+  }
+}
+
+.header {
+  padding-top: 25px;
+  margin-bottom: 100px;
+
+  &--gallery {
+    margin-bottom: 32px;
+
+    @include onDesktop {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__sub {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 56px;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 56px;
+    height: 56px;
+    background-image: url(../images/logo.png);
+    background-position: center;
+    background-size: cover;
+
+    &--cont {
+      background-image: url(../images/logo-white.svg);
+    }
+
+    @include onDesktop {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__contact {
+    padding: 0 15px;
+    line-height: 24px;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    color: $bacgroundColor;
+
+    &--cont {
+      background-color: $name;
+      color: $bacgroundColor;
+    }
+
+    @include onDesktop {
+      font-size: 16px;
+      line-height: 32px;
+      margin-right: 40px;
+    }
+  }
+
+  &__gallery {
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    color: $name;
+    background-color: $bacgroundColor;
+    width: 72px;
+    text-align: center;
+
+    &--cont {
+      color: $bacgroundColor;
+    }
+
+    &--main {
+      background-color: transparent;
+      color: $bacgroundColor;
+    }
+
+    @include onDesktop {
+      padding: 5px 15px;
+      width: 96px;
+      font-size: 16px;
+      margin-right: 40px;
+    }
+
+    @include onTV {
+      width: 136px;
+    }
+  }
+
+  &__lang {
+    padding: 5px 15px;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    background-color: $bacgroundColor;
+    border: none;
+    height: 25px;
+    width: 50px;
+    color: $name;
+    appearance: none;
+
+    &--cont {
+      color: $bacgroundColor;
+      background-color: #fff;
+    }
+
+    @include onDesktop {
+      width: 100px !important;
+      height: 32px;
+    }
+  }
+}
+
+.contents {
+  max-width: 50%;
+  z-index: -1;
+
+  &__wrapper-first {
+    display: flex;
+    flex-direction: column;
+    min-width: 280px;
+
+    @include onDesktop {
+      width: 500px;
+    }
+
+    @include onTV {
+      width: 650px;
+    }
+  }
+
+  &__wrapper-second {
+    min-width: 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onDesktop {
+      width: 500px;
+    }
+
+    @include onTV {
+      width: 650px;
+    }
+  }
+
+  &__subtitle {
+    font-family: "Exo 2", sans-serif;
+    font-weight: 500;
+    font-size: 38px;
+    color: #fff;
+
+    @include onDesktop {
+      font-size: 54px;
+    }
+
+    @include onTV {
+      font-size: 72px;
+    }
+  }
+
+  &__rec {
+    width: 50px;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 10px 0 0 0;
+    margin-left: 20px;
+
+    @include onDesktop {
+      width: 60px;
+      height: 80px;
+    }
+
+    @include onTV {
+      width: 80px;
+      height: 115px;
+    }
+  }
+
+  &__title {
+    font-family: "Exo 2", sans-serif;
+    font-weight: 900;
+    font-size: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      font-size: 64px;
+    }
+
+    @include onTV {
+      font-size: 92px;
+    }
+  }
+
+  &__text-first {
+    padding: 10px 20px;
+    width: 250px;
+    min-height: 55px;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 10px 0 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: #fff;
+
+    @include onDesktop {
+      width: 275px;
+      min-height: 75px;
+      font-size: 32px;
+    }
+
+    @include onTV {
+      width: 375px;
+      min-height: 105px;
+      font-size: 42px;
+    }
+  }
+
+  &__text-second {
+    height: 123px;
+    width: 200px;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 10px 0;
+    align-self: end;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #fff;
+
+    @include onDesktop {
+      width: 275px;
+      height: 155px;
+      font-size: 16px;
+    }
+
+    @include onTV {
+      width: 380px;
+      height: 215px;
+      font-size: 23px;
+    }
+  }
+}
+
+.slider {
+  position: relative;
+}
+
+.slick-arrow {
+  position: absolute;
+  z-index: 10;
+  font-size: 0;
+}
+
+.slick-arrow.slick-prev {
+  display: none !important;
+  border: 1px solid #fff;
+  width: 30px;
+  height: 30px;
+  top: 30%;
+  right: 5%;
+  background: url(../images/call_made.png) 0 0 / 100% no-repeat;
+
+  @include onDesktop {
+    display: block !important;
+    z-index: 999 !important;
+  }
+}
+
+.slick-dots {
+  display: none !important;
+  position: absolute;
+  top: 45%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include onDesktop {
+    display: block !important;
+  }
+}
+
+.slick-dots .slick-active button {
+  width: 25px !important;
+  border-color: none;
+  outline: none;
+}
+
+.slick-dots li {
+  list-style: none;
+}
+
+.slick-dots button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  color: #fff;
+}
+
+.slick-arrow.slick-next {
+  display: none !important;
+  border: 1px solid #fff;
+  width: 30px;
+  height: 30px;
+  right: 5%;
+  top: 60%;
+  background: url(../images/call_made1.png) 0 0 / 100% no-repeat;
+
+  @include onDesktop {
+    display: block !important;
+    z-index: 999 !important;
+  }
+}
+
+.slider-num {
+  position: absolute;
+  top: 48.5%;
+  right: 8%;
+  color: #fff;
+  font-size: 15px;
+}
+
+.slick-track {
+  // display: flex;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slider-image {
+  max-width: 100%;
+  height: 100vh;
+  background-image: url(../images/slide1.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.slider-image-2 {
+  max-width: 100%;
+  height: 100vh;
+  background-image: url(../images/slide2.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.slider-image-3 {
+  max-width: 100%;
+  height: 100vh;
+  background-image: url(../images/slide3.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.slider-item {
+  max-width: 100%;
+  height: 100vh;
+}
+
+.gallery {
+  &__ph-1 {
+    width: 128px;
+    height: 128px;
+
+    @include onDesktop {
+      width: 353px;
+      height: 353px;
+    }
+
+    @include onTV {
+      width: 512px;
+      height: 512px;
+    }
+  }
+
+  &__ph-2 {
+    width: 128px;
+    height: 128px;
+
+    @include onDesktop {
+      width: 353px;
+      height: 353px;
+    }
+
+    @include onTV {
+      width: 512px;
+      height: 512px;
+    }
+  }
+
+  &__ph-3 {
+    width: 272px;
+    height: 272px;
+
+    @include onDesktop {
+      width: 353px;
+      height: 353px;
+    }
+
+    @include onTV {
+      width: 512px;
+      height: 512px;
+    }
+  }
+
+  &__ph-4 {
+    width: 272px;
+    height: 360px;
+
+    @include onDesktop {
+      width: 544px;
+      height: 728px;
+    }
+
+    @include onTV {
+      width: 784px;
+      height: 1048px;
+    }
+  }
+
+  &__ph-5 {
+    width: 272px;
+    height: 360px;
+
+    @include onDesktop {
+      width: 544px;
+      height: 728px;
+    }
+
+    @include onTV {
+      width: 784px;
+      height: 1048px;
+    }
+  }
+
+  &__ph-6 {
+    width: 272px;
+    height: 176px;
+
+    @include onDesktop {
+      width: 1120px;
+      height: 744px;
+    }
+
+    @include onTV {
+      width: 1600px;
+      height: 1064px;
+    }
+  }
+}
