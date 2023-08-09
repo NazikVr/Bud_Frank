@@ -1,3 +1,0 @@
-# budFrank
-
-https://budfrank.com/
